@@ -46,7 +46,7 @@ function twoArrayAndPhrase(n,m,matrix)
             }
 
             //checking for secondary diagonal
-            if(i >=3 && j < n-3)
+            if(i >=3 && j < m-3)
             {
                 if(matrix[i][j] == "s" && matrix[i-1][j+1] == "a" && matrix[i-2][j+2] == "b" && matrix[i-3][j+3] == "a")
                     count++;
