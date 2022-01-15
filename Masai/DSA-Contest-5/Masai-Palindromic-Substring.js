@@ -5,6 +5,7 @@ https://oj.masaischool.com/contest/2505/problem/3
 function palindromicSubstring(str)
 {
     var max_length = 0;
+    
     //Finding substrings that start and end with same character
     for(let i = 0; i < str.length; i++)
     {
