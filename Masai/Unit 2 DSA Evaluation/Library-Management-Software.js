@@ -36,7 +36,6 @@ function libraryManagementSoftware(input)
             console.log(stack[stack.length-1]);
         
     }
-     
 }
 
 
