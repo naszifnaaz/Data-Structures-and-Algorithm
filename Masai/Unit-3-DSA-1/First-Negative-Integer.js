@@ -5,26 +5,27 @@ https://oj.masaischool.com/contest/2947/problem/02
 
 function firstNegativeInteger(n,k,arr)
 {
-    //Sliding window
-    var bag = "";
-    var flag = false;
-    
-    for(let i = 0; i < k; i++)
-    {
-        if(arr[i] < 0)
-            bag += arr[i] + " ";
-    }
+    var ans = [];
+    var flag;
 
-    for(let i = k-1; i < n; i++)
+    for(let i = 0; i < (n - k + 1); i++)
     {
         flag = false;
-        if(arr[i] < 0)
-            flag = true;      
-    }
-    if(flag == true)
-        bag +
+        for(let j = 0; j < k; j++)
+        {
+            if(arr[i + j] < 0)
+            {
+                ans.push(arr[i + j]);
+                flag = true;
+                break;
+            }
+        }
 
-    console.log(bag);
+        if(!flag)
+            ans.push(0);
+    }
+
+    console.log(ans.join(" "));
 }
 
 
