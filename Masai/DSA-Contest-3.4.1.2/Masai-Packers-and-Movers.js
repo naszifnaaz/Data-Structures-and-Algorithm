@@ -2,14 +2,21 @@
 https://oj.masaischool.com/contest/3018/problem/05
 */
 
-function packersAndMovers(n,k,arr)
+function packersAndMovers(n,k,current,arr)
 {
-    if(k == 0)
+    if(current == k)
         return 1;
-    else if(k < 0)
+    
+    if(current > k)
         return 0;
-    else
-        return packersAndMovers(n-1,k-arr[n-1],arr);
+    
+    let ans = 0;
+    for(let i = 0; i < n; i++)
+    {
+        let count = packersAndMovers(n,k,current+arr[i],arr);
+        ans += count;
+    }
+    return ans;
 }
 
 
@@ -17,4 +24,5 @@ function packersAndMovers(n,k,arr)
 var k = 3;
 var n = 3;
 var arr = [1,2,3];
-var ans = packersAndMovers()
+var res = packersAndMovers(n,k,0,arr);
+console.log(res);
